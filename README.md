@@ -1,4 +1,4 @@
-# FAIZ-AI — Search Bot
+# FAIZ-AI — > FAIZ-AI is an interactive CLI-based AI search engine.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/mufaizz/FAIZ-AI/blob/main/LICENSE)
 
@@ -66,31 +66,54 @@ License: MIT — see the [LICENSE](./LICENSE) file for full terms.
 - pip
 - Linux/Unix environment recommended for automated script
 
-### Automated setup
-The repository includes a setup script that will install system packages, create a virtual environment, and install dependencies.
-
-```bash
-chmod +x setup.sh
-./setup.sh
+### Setup and Usage
+1. Clone Repository or Download ZIP.
+Open Terminal and
+Paste This:
 ```
-
-> The script may run system package updates. Review the script before running if you prefer manual control.
-
-### Manual setup
-Clone the repository and create a virtual environment:
-
-```bash
 git clone https://github.com/mufaizz/FAIZ-AI.git
-cd FAIZ-AI
-python3 -m venv venv
+```
+2. Make `setup.sh` executable.
+Type:
+```
+chmod +x setup.sh
+```
+3. Run `setup.sh`.
+```
+sudo bash setup.sh
+```
+<img width="527" height="51" alt="oie_1Hbw91JKkt13" src="https://github.com/user-attachments/assets/ec2e30c1-1d35-4102-8039-75d4398bc3d8" />
+
+
+4. Activate Environment.
+```
 source venv/bin/activate
 ```
 
-Install Python dependencies: 
 
-```bash
-sudo bash setup.sh
+<img width="569" height="36" alt="oie_PrKev1XF86d1" src="https://github.com/user-attachments/assets/c9d7ffd8-0d67-4e6b-937c-1aed5e49a55f" />
+
+5. Run `main.py`.
 ```
+python main.py
+```
+
+
+<img width="562" height="52" alt="oie_MRveXXCQyxtN" src="https://github.com/user-attachments/assets/e2e301d8-2b68-4076-94df-e2bac7752b27" />
+
+6. Enter a query at the prompt, for example:
+
+<img width="851" height="137" alt="oie_r5S7GejDZqfN" src="https://github.com/user-attachments/assets/f3893ddd-5b5c-472a-b200-c15af9ae7dae" />
+
+7. Running Interface:
+
+<img width="759" height="274" alt="oie_39wRwc9y7N9y" src="https://github.com/user-attachments/assets/569dbf06-9ac7-47af-b5a0-22f4b3b94062" />
+
+
+8. Final Results:
+
+<img width="759" height="274" alt="oie_39wRwc9y7N9y" src="https://github.com/user-attachments/assets/68c18fba-9b5c-4390-9ded-d87d37308b85" />
+
 
 ---
 
@@ -150,6 +173,12 @@ What happens:
 ## Safety & legal
 
 FAIZ-AI is provided as an educational/personal project. Use responsibly and in accordance with applicable laws.
+## ⚠️ Disclaimer
+
+FAIZ-AI is intended for educational and research purposes only.
+The author is not responsible for misuse or access to illegal or copyrighted material.
+Always follow local laws and ethical guidelines.
+
 
 - Do not use FAIZ-AI to retrieve copyrighted material unless you have permission.
 - The tool includes filters and safeguards, but protection is not guaranteed — review and verify results as appropriate.
