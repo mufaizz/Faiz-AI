@@ -184,6 +184,8 @@ Please keep changes focused and well-documented. If you want help drafting issue
 
 This repository is licensed under the MIT License — see the [LICENSE](./LICENSE) file for details.
 
-## Contact
+##Contact
 
-Repository: [mufaizz/FAIZ-AI](https://github.com/mufaizz/FAIZ-AI)
+E-mail: mufaizmalik9622@gmail.com
+
+Instagram: https://www.instagram.com/muf4iz?igsh=MXJ6eWR2cDl0M3R6bA==
