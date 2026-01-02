@@ -14,27 +14,55 @@ sudo apt-get install -y python3 python3-pip python3-venv curl
 python3 -m venv venv
 source venv/bin/activate
 
-# Install all required Python packages
+# Install dependencies
 pip install --upgrade pip
-pip install sentence-transformers==2.2.2
-pip install aiohttp==3.9.1
-pip install aioftp==0.21.3
-pip install pyspellchecker==0.7.2
-pip install pyyaml==6.0.1
-pip install numpy==1.24.3
-pip install bencodepy
-pip install pyppeteer
 
-# Create essential config if not exists
+# Use requirements.txt if it exists, otherwise fall back to manual install
+if [ -f "requirements.txt" ]; then
+    echo "📦 Installing from requirements.txt..."
+    pip install -r requirements.txt
+else
+    echo "⚠️ requirements.txt not found! Installing manually..."
+    pip install sentence-transformers==2.2.2 aiohttp==3.9.1 aioftp==0.21.3 \
+    pyspellchecker==0.7.2 pyyaml==6.0.1 numpy==1.24.3 bencodepy pyppeteer
+fi
+
+# Create config directory
 mkdir -p config
-cat > config/config.yaml << 'EOF'
+
+# Only create config.yaml if it DOES NOT exist
+if [ ! -f "config/config.yaml" ]; then
+    echo "⚙️ Creating default config.yaml..."
+    cat > config/config.yaml << 'EOF'
 core:
   model: "all-MiniLM-L6-v2"
+  embedding_dim: 384
 
 search:
-  timeout: 30
-  protocols: ["http", "ftp"]
+  timeout: 45
+  max_results: 100
+  filetypes: ["pdf", "doc", "docx", "zip", "mp4", "mp3"]
+  protocols: ["http", "ftp", "ipfs", "torrent"]
+
+safety:
+  enable_verification: true
+  max_file_size_mb: 500
+  blocked_extensions: [".exe", ".bat", ".sh", ".dmg"]
+
+http:
+  user_agent: "Mozilla/5.0 (FAIZ-AI/1.0)"
+  rate_limit_delay: 1.0
+
+ftp:
+  public_servers:
+    - "ftp.freebsd.org"
+    - "speedtest.tele2.net"
+    - "ftp.ncbi.nlm.nih.gov"
+    - "mirrors.kernel.org"
 EOF
+else
+    echo "✅ Existing config.yaml found. Keeping your custom settings."
+fi
 
 # Set Python path
 echo "export PYTHONPATH=\$PYTHONPATH:$(pwd)" >> ~/.bashrc
@@ -44,7 +72,7 @@ echo "✅ FAIZ AI Setup Complete!"
 echo ""
 echo "To use:"
 echo "1. source venv/bin/activate"
-echo "2. python main.py 'your search query'"
+echo "2. python main.py"
 echo ""
 echo "Example:"
-echo "python main.py 'linux documentation pdf'"
+echo "python main.py"
