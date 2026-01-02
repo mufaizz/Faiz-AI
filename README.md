@@ -91,9 +91,7 @@ source venv/bin/activate
 Install Python dependencies:
 
 ```bash
-pip install -r requirements.txt
-# or (if no requirements file present)
-pip install sentence-transformers==2.2.2 aiohttp==3.9.1 aioftp==0.21.3 pyspellchecker==0.7.2 pyyaml==6.0.1 numpy==1.24.3
+bash setup.sh
 ```
 
 ---
