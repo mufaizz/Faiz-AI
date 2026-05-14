@@ -185,4 +185,4 @@ This repository is licensed under the MIT License — see the [LICENSE](./LICENS
 
 E-mail: mufaizmalik9622@gmail.com
 
-Instagram: https://www.instagram.com/muf4iz
+Instagram: https://www.instagram.com/muffaizz
